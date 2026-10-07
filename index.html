@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>المساعد الذكي لمرض السكري</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<div class="page-shell">
+
+    <header class="hero">
+        <div>
+            <div class="eyebrow">Better Data • Healthier Lives</div>
+            <h1>المساعد الذكي لمرض السكري</h1>
+            <p>تحليل أولي للبيانات الصحية + مساعد طبي ذكي مرتبط ببيانات المريض.</p>
+        </div>
+        <div class="hero-icon">🩺</div>
+    </header>
+
+    <main class="container">
+
+        <section class="card form-card">
+            <div class="section-title">
+                <div>
+                    <span class="section-kicker">Patient Assessment</span>
+                    <h2>أدخل بياناتك الصحية</h2>
+                </div>
+                <span class="badge">ML Analysis</span>
+            </div>
+
+            <div class="grid">
+
+                <div class="field">
+                    <label for="height">الطول <span>Hint: بالسنتيمتر</span></label>
+                    <input id="height" type="number" min="100" max="250" step="0.1" placeholder="مثال: 170" />
+                </div>
+
+                <div class="field">
+                    <label for="weight">الوزن <span>Hint: بالكيلوجرام</span></label>
+                    <input id="weight" type="number" min="20" max="300" step="0.1" placeholder="مثال: 70" />
+                </div>
+
+                <div class="field bmi-preview">
+                    <label>مؤشر كتلة الجسم BMI</label>
+                    <div id="bmiPreview" class="calculated-value">سيتم حسابه تلقائيًا</div>
+                    <small id="bmiCategory">أدخل الطول والوزن أولًا</small>
+                </div>
+
+                <div class="field">
+                    <label for="ageCategory">الفئة العمرية</label>
+                    <select id="ageCategory">
+                        <option value="">اختر الفئة العمرية</option>
+                        <option value="1">18–24 سنة</option>
+                        <option value="2">25–29 سنة</option>
+                        <option value="3">30–34 سنة</option>
+                        <option value="4">35–39 سنة</option>
+                        <option value="5">40–44 سنة</option>
+                        <option value="6">45–49 سنة</option>
+                        <option value="7">50–54 سنة</option>
+                        <option value="8">55–59 سنة</option>
+                        <option value="9">60–64 سنة</option>
+                        <option value="10">65–69 سنة</option>
+                        <option value="11">70–74 سنة</option>
+                        <option value="12">75–79 سنة</option>
+                        <option value="13">80 سنة فأكثر</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="genHlth">كيف تصف صحتك العامة؟</label>
+                    <select id="genHlth">
+                        <option value="">اختر</option>
+                        <option value="1">ممتازة</option>
+                        <option value="2">جيدة جدًا</option>
+                        <option value="3">جيدة</option>
+                        <option value="4">مقبولة</option>
+                        <option value="5">ضعيفة</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="highBp">هل لديك ارتفاع في ضغط الدم؟</label>
+                    <select id="highBp">
+                        <option value="">اختر</option>
+                        <option value="1">نعم</option>
+                        <option value="0">لا</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="highChol">هل لديك ارتفاع في الكوليسترول؟</label>
+                    <select id="highChol">
+                        <option value="">اختر</option>
+                        <option value="1">نعم</option>
+                        <option value="0">لا</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="smoker">هل تدخن؟</label>
+                    <select id="smoker">
+                        <option value="">اختر</option>
+                        <option value="1">نعم</option>
+                        <option value="0">لا</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="stroke">هل سبق أن تعرضت لسكتة دماغية؟</label>
+                    <select id="stroke">
+                        <option value="">اختر</option>
+                        <option value="1">نعم</option>
+                        <option value="0">لا</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="heartDisease">هل لديك تاريخ مع أمراض القلب؟</label>
+                    <select id="heartDisease">
+                        <option value="">اختر</option>
+                        <option value="1">نعم</option>
+                        <option value="0">لا</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="physActivity">هل تمارس نشاطًا بدنيًا منتظمًا؟</label>
+                    <select id="physActivity">
+                        <option value="">اختر</option>
+                        <option value="1">نعم</option>
+                        <option value="0">لا</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="diffWalk">هل تواجه صعوبة في المشي أو الحركة؟</label>
+                    <select id="diffWalk">
+                        <option value="">اختر</option>
+                        <option value="1">نعم</option>
+                        <option value="0">لا</option>
+                    </select>
+                </div>
+            </div>
+
+            <button id="analyzeBtn" class="primary-btn">
+                تحليل البيانات وإظهار النتيجة 🚀
+            </button>
+
+            <div id="formError" class="alert error hidden"></div>
+        </section>
+
+
+        <section id="resultSection" class="card result-card hidden">
+
+            <div class="section-title">
+                <div>
+                    <span class="section-kicker">Prediction Result</span>
+                    <h2>نتيجة التحليل</h2>
+                </div>
+                <span id="resultDot" class="status-dot"></span>
+            </div>
+
+            <div class="result-grid">
+                <div class="metric">
+                    <span>BMI</span>
+                    <strong id="resultBmi">--</strong>
+                    <small id="resultBmiCategory">--</small>
+                </div>
+
+                <div class="metric">
+                    <span>الفئة العمرية</span>
+                    <strong id="resultAge">--</strong>
+                </div>
+
+                <div class="metric wide">
+                    <span>نتيجة نموذج Random Forest</span>
+                    <strong id="resultStatus">--</strong>
+                </div>
+            </div>
+
+            <div class="advice-box">
+                <div class="advice-title">🤖 شرح المساعد الذكي</div>
+                <div id="aiAdvice">--</div>
+            </div>
+
+            <div class="note">
+                ⚠️ هذه النتيجة تحليل تنبؤي وليست تشخيصًا طبيًا. لا توقف أو تبدأ أي دواء بناءً على هذه الصفحة، واستشر مختصًا عند الحاجة.
+            </div>
+        </section>
+
+
+        <section id="chatSection" class="card chat-card hidden">
+
+            <div class="chat-header">
+                <div>
+                    <span class="section-kicker">Personalized Medical Chat</span>
+                    <h2>اسأل المساعد عن نتيجتك 💬</h2>
+                    <p>المساعد يرى بيانات التحليل الحالية فقط ويستخدمها للإجابة على أسئلتك.</p>
+                </div>
+                <div class="chat-status"><span></span> مرتبط بالتحليل الحالي</div>
+            </div>
+
+            <div class="quick-questions">
+                <button data-question="لماذا ظهرت لي هذه النتيجة؟">لماذا ظهرت لي هذه النتيجة؟</button>
+                <button data-question="ما أهم العوامل الموجودة في بياناتي التي أحتاج أن أنتبه لها؟">ما أهم العوامل المهمة في بياناتي؟</button>
+                <button data-question="كيف أستطيع تحسين وضعي الصحي بناءً على بياناتي؟">كيف أحسن وضعي؟</button>
+                <button data-question="ما معنى مؤشر كتلة الجسم BMI في حالتي؟">ماذا يعني BMI عندي؟</button>
+            </div>
+
+            <div id="chatMessages" class="chat-messages">
+                <div class="message assistant">
+                    <div class="avatar">🤖</div>
+                    <div class="bubble">
+                        أنا جاهز. اسألني عن نتيجة التحليل أو أي شيء متعلق بالبيانات الصحية التي أدخلتها.
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-row">
+                <textarea id="chatInput" rows="2" placeholder="اكتب سؤالك هنا..."></textarea>
+                <button id="sendChatBtn" class="send-btn">إرسال</button>
+            </div>
+
+            <div id="chatError" class="alert error hidden"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        Diabetes Dashboard • ML + Personalized AI Assistant
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
